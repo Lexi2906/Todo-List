@@ -1,0 +1,33 @@
+:root {
+  --white: #FFFFFF;
+  --black: #111111;
+  --active-color: 3A7CFD;
+  --radio-btn-inactive-color: E3E4F1;
+  --radio-btn-text-color: var(--white);
+  --radio-btn-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --radio-btn-hover: var(--radio-btn-gradient);
+
+  .light-mode {
+    --background: F2F2F2;
+    --input-text-color: 9495A5;
+    --input-active-text-color: 393A4B;
+    --task-done-color: D1D2DA;
+    --todo-text-color: 494C6B;
+    --text-color: 9495A5;
+    --hover-footer-text-color: var(--todo-text-color)
+
+  }
+
+  .dark-mode {
+    --background: 25273D;
+    --input-text-color: 767992;
+    --input-active-text-color: C8CBE7;
+    --task-done-color: 4D5067;
+    --todo-text-color: C8CBE7;
+    --text-color: 5B5E7E;
+    --hover-footer-text-color: E3E4F1;
+  }
+
+
+
+}

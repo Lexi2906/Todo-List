@@ -9,6 +9,10 @@
     background: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
     background-size: cover;
     position: absolute;
+
+    @media (min-width: 1440px) {
+      height: 300px;
+    }
   }
 }
 
