@@ -1,19 +1,53 @@
+
 .todo-list {
   width: 100vw;
   height: 100vh;
-  position: relative;
 
   &__background {
     height: 375px;
     width: 100%;
     background: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
     background-size: cover;
-    position: absolute;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
     @media (min-width: 1440px) {
       height: 300px;
     }
+
+    .header {
+      width: 325px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .header__text {
+        color: white;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+
+        @media (min-width: 1440px) {
+          font-size: 40px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        width: 541px;
+        height: 48px;
+      }
+
+    }
   }
+
+
 }
 
 
