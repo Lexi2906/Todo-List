@@ -1,0 +1,15 @@
+.todo-list {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  &__background {
+    height: 375px;
+    width: 100%;
+    background: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
+    background-size: cover;
+    position: absolute;
+  }
+}
+
+
