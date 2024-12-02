@@ -2,18 +2,23 @@
 .todo-list {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 72px;
 
   &__background {
     height: 375px;
     width: 100%;
-    background: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
+    background: var(--background-photo);
     background-size: cover;
-    position: relative;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
 
     @media (min-width: 1440px) {
       height: 300px;
@@ -27,8 +32,7 @@
       align-items: center;
 
       .header__text {
-        color: white;
-        font-family: 'Josefin Sans', sans-serif;
+        color: var(--white);
         font-size: 20px;
         font-weight: bold;
         text-transform: uppercase;
@@ -46,7 +50,19 @@
 
     }
   }
-
+&__drag-and-drop {
+  width: 179px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .drag-and-drop__text {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: normal;
+    color: var(--text-color);
+    letter-spacing: 0.3px;
+  }
 
 }
 

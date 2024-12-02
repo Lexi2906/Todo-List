@@ -1,0 +1,10 @@
+.icon{
+  &__moon {
+    height: 20px;
+
+    @media (min-width: 1440px) {
+      height: 26px;
+    }
+  }
+}
+
