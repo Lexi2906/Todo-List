@@ -18,6 +18,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    gap: 40px;
 
 
     @media (min-width: 1440px) {
@@ -29,7 +31,6 @@
       height: 20px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
 
       .header__text {
         color: var(--white);
@@ -55,15 +56,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
 }
   .drag-and-drop__text {
     font-size: 14px;
     line-height: 14px;
     font-weight: normal;
+    //nie dziala kolor tekstu
     color: var(--text-color);
     letter-spacing: 0.3px;
   }
-
 }
 
 

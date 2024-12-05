@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-todo-input',
-  imports: [],
+  imports: [
+  ],
   templateUrl: './todo-input.component.html',
-  styleUrl: './todo-input.component.scss'
+  standalone: true,
+  styleUrl: './todo-input.component.scss',
 })
 export class TodoInputComponent {
 
