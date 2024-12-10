@@ -13,12 +13,13 @@
 
   .todo-input__radio {
     position: absolute;
+    appearance: unset;
     left: 20px;
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    border: 2px solid var(--radio-btn-inactive-color);
-    background-color: transparent;
+    border: 1px solid var(--radio-btn-inactive-color);
+    background-color: var(--white);
 
     @media (min-width: 1440px) {
       height: 24px;
