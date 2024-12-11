@@ -1,8 +1,12 @@
 app-todo-items {
   width: 100%;
-  height: 100%;
   position: absolute;
   left: 0;
+  top: 172px;
+
+  @media (min-width: 1440px){
+    top: 246px;
+  }
 }
 
 .todo-list {
@@ -12,7 +16,7 @@ app-todo-items {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  //padding-bottom: 72px;
+  top: 246px;
 
   &__background {
     height: 200px;
