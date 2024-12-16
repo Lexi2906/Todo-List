@@ -23,7 +23,15 @@
       padding: 16px 24px;
     }
 
+    &__items,
+    &__clean {
+      font-size: 12px;
 
+      @media (min-width: 1440px) {
+        font-size: 14px;
+      }
+
+    }
     &__status {
       width: 100%;
       display: flex;
@@ -31,6 +39,7 @@
       justify-content: space-around;
       align-items: center;
       border-radius: 5px;
+      font-weight: bold;
       padding: 15px 80px 18px 81px;
       gap: 18px;
 

@@ -21,3 +21,27 @@
     }
   }
 }
+
+
+.drag-and-drop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  padding-top: 40px;
+  position: absolute;
+
+  @media (min-width: 1440px) {
+    padding-top: 48px;
+  }
+}
+
+.drag-and-drop__text {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: normal;
+  //nie dziala kolor tekstu
+  color: var(--text-color);
+  letter-spacing: 0.3px;
+}

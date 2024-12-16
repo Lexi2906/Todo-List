@@ -51,6 +51,10 @@
   .todo-input__text::placeholder {
     color: var(--input-text-color);
     font-size: 12px;
+
+    @media (min-width: 1440px) {
+      font-size: 18px;
+    }
   }
 }
 
