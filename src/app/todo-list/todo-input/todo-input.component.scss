@@ -6,26 +6,23 @@
   box-sizing: border-box;
   position: relative;
   color: var(--input-active-text-color);
-  cursor: pointer;
 
   @media (min-width: 1440px) {
     width: 540px;
     height: 64px;
   }
 
-  .todo-input__radio {
+  .done-checkbox {
     position: absolute;
     left: 20px;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 1px solid var(--radio-btn-inactive-color);
-    background-color: var(--white);
 
     @media (min-width: 1440px) {
-      height: 24px;
-      width: 24px;
       left: 24px
+    }
+
+    // Prevent any interaction
+    &:disabled {
+      pointer-events: none;
     }
   }
 
@@ -40,7 +37,7 @@
     font-size: 12px;
     color: var(--input-active-text-color);
     padding-left: 52px;
-    cursor: pointer;
+    cursor: auto;
 
 
     @media (min-width: 1440px) {
