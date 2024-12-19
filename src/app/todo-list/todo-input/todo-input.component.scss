@@ -1,3 +1,7 @@
+@use '../../../assets/styles/variables' as v;
+@use '../../../assets/styles/mixins' as m;
+
+
 .todo-input {
   display: flex;
   align-items: center;
@@ -7,7 +11,7 @@
   position: relative;
   color: var(--input-active-text-color);
 
-  @media (min-width: 1440px) {
+  @include m.d{
     width: 540px;
     height: 64px;
   }
@@ -16,7 +20,7 @@
     position: absolute;
     left: 20px;
 
-    @media (min-width: 1440px) {
+    @include m.d {
       left: 24px
     }
 
@@ -31,7 +35,7 @@
     height: 100%;
     border: 1px solid var(--background);
     background-color: var(--background);
-    caret-color: var(--active-color);
+    caret-color: v.$blue;
     border-radius: 5px;
     outline: none;
     font-size: 12px;
@@ -39,17 +43,17 @@
     padding-left: 52px;
     cursor: auto;
 
-
-    @media (min-width: 1440px) {
+    @include m.d {
       font-size: 18px;
       padding-left: 72px;
     }
   }
+
   .todo-input__text::placeholder {
     color: var(--input-text-color);
     font-size: 12px;
 
-    @media (min-width: 1440px) {
+    @include m.d {
       font-size: 18px;
     }
   }

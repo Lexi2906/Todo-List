@@ -1,3 +1,5 @@
+@use '../../../assets/styles/mixins' as m;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@
     border-radius: 0 0 5px 5px;
     font-size: 14px;
 
-    @media (min-width: 1440px) {
+    @include m.d {
       height: 64px;
       width: 540px;
       padding: 16px 24px;
@@ -27,10 +29,9 @@
     &__clean {
       font-size: 12px;
 
-      @media (min-width: 1440px) {
+      @include m.d {
         font-size: 14px;
       }
-
     }
     &__status {
       width: 100%;
@@ -43,17 +44,16 @@
       padding: 15px 80px 18px 81px;
       gap: 18px;
 
-      @media (min-width: 1440px) {
+      @include m.d {
         padding: 0 56px 0 96px;
         gap: 0;
       }
     }
 
-
     .desktop {
       display: none;
 
-      @media (min-width: 1440px) {
+      @include m.d {
         display: flex;
         justify-content: space-between;
         width: 188px;
@@ -65,8 +65,7 @@
   .mobile {
     display: flex;
 
-
-    @media (min-width: 1440px) {
+    @include m.d {
       display: none;
     }
   }

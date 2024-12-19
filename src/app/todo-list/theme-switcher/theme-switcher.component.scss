@@ -1,8 +1,10 @@
+@use '../../../assets/styles/mixins' as m;
+
 .icon{
   &__moon {
     height: 20px;
 
-    @media (min-width: 1440px) {
+    @include m.d {
       height: 26px;
     }
   }

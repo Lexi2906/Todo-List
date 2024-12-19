@@ -1,3 +1,5 @@
+@use '../../../assets/styles/mixins' as m;
+
 .items {
   width: 100%;
   height: 100%;
@@ -15,13 +17,12 @@
     box-shadow: var(--border-shadow);
     background-color: var(--background);
 
-    @media (min-width: 1440px) {
+    @include m.d {
       width: 540px;
       min-height: 64px;
     }
   }
 }
-
 
 .drag-and-drop {
   width: 100%;
@@ -32,7 +33,7 @@
   padding-top: 40px;
   position: absolute;
 
-  @media (min-width: 1440px) {
+  @include m.d {
     padding-top: 48px;
   }
 }
@@ -41,7 +42,6 @@
   font-size: 14px;
   line-height: 14px;
   font-weight: normal;
-  //nie dziala kolor tekstu
   color: var(--text-color);
   letter-spacing: 0.3px;
 }

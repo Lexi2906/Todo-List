@@ -1,27 +1,31 @@
+$white: #FFFFFF !default;
+$black: #111111 !default;
+$blue: #3A7CFD !default;
+
 :root {
+
   --white: #FFFFFF;
   --black: #111111;
-  --active-color: #3A7CFD;
-  --radio-btn-inactive-color: #E3E4F1;
-  --radio-btn-text-color: var(--white);
-  --radio-btn-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  --radio-btn-inactive-color: #E3E4F1; //gray3
+  --radio-btn-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%); //gradient
   --radio-btn-hover: var(--radio-btn-gradient);
   --font-family: 'Josefin Sans';
-  --border-color: rgba(151, 151, 151, 0.2);
-  --checkbox-active: url('/assets/images/icon-check.svg');
+  --border-color: rgba(151, 151, 151, 0.2); //gray2
+  --checkbox-active: url('/assets/images/icon-check.svg'); //icon-check
 
 
 
   body.light-mode {
-    --body-background: #F2F2F2;
+    --body-background: #F2F2F2; //gray1
     --background: var(--white);
-    --input-text-color: #9495A5;
+    --input-text-color: #9495A5; //gray5
     --input-active-text-color: #393A4B;
     --task-done-color: D1D2DA;
-    --todo-text-color: #494C6B;
+    --todo-text-color: #494C6B; //gray6
     --background-items-color: var(--white);
-    --text-color: #9495A5;
-    --border-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    --text-color: #9495A5;//gray4
+    --border-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); //gray-shadow
     --hover-footer-text-color: var(--todo-text-color);
     --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
 

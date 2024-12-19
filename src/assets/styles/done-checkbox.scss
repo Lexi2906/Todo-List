@@ -1,3 +1,5 @@
+@use './mixins' as m;
+
 //Create the checkbox container
 .done-checkbox {
   all: unset;
@@ -10,7 +12,7 @@
   position: relative;
   cursor: pointer;
 
-  @media (min-width: 1440px) {
+  @include m.d{
     height: 24px;
     width: 24px;
   }
