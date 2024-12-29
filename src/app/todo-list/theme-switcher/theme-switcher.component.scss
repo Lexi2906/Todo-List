@@ -1,12 +1,11 @@
 @use '../../../assets/styles/mixins' as m;
 
-.icon{
-  &__moon {
+
+  .icon-image {
     height: 20px;
 
     @include m.d {
       height: 26px;
     }
   }
-}
 

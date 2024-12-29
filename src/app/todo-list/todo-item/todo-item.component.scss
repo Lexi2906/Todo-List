@@ -1,5 +1,5 @@
 @use '../../../assets/styles/mixins' as m;
-
+@use '../../../assets/styles/variables' as v;
 .item {
   height: 52px;
   display: flex;
@@ -7,27 +7,13 @@
   align-items: center;
   padding-left: 20px;
   gap: 12px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid v.$gray-2;
 
   @include m.d {
     height: 64px;
     padding-left: 24px;
     gap: 24px;
 
-  }
-
-  &__radio {
-    appearance: unset;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 1px solid var(--radio-btn-inactive-color);
-    background-color: var(--white);
-
-    @include m.d {
-      height: 24px;
-      width: 24px;
-    }
   }
 
   &__text {

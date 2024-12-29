@@ -1,14 +1,16 @@
 @use 'assets/styles/variables' as v;
 @use 'assets/styles/mixins' as m;
-@use 'assets/styles/done-checkbox';
+@use 'assets/styles/switch-mode';
+@use './assets/styles/done-checkbox';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: v.$font;
   letter-spacing: 0.15px;
 }
 
 body {
-  background: var(--body-background)
+  background: var(--body-background);
 }
