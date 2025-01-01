@@ -1,5 +1,7 @@
-<div class="icon">
-<img class="icon__moon" src="assets/images/icon-moon.svg" alt="Dark Mode"/>
-
-<!--<img *ngIf="!isLightMode" class="icon__sun" src="assets/images/sun-icon.svg" alt="Light Mode" />-->
+<div class="icon" (click)="toggleDarkMode()">
+  <img
+    [src]="isDarkMode ? '/assets/images/icon-sun.svg' : '/assets/images/icon-moon.svg'"
+    [alt]="isDarkMode ? 'Light Mode' : 'Dark Mode'"
+    class="icon__image"
+  />
 </div>

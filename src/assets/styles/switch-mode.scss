@@ -1,0 +1,27 @@
+@use './variables' as v;
+
+  :root {
+    --body-background: #{v.$gray-1};
+    --background: #{v.$white};
+    --input-text-color: #{v.$gray-6};
+    --input-active-text-color: #{v.$blue-2};
+    --task-done-color: #{v.$gray-5};
+    --todo-text-color: #{v.$gray-8};
+    --background-items-color: #{v.$white};
+    --text-color: #{v.$gray-6};
+    --hover-footer-text-color: #{v.$gray-8};
+    --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
+  }
+
+  .dark-mode {
+    --body-background: #{v.$blue-4};
+    --background: #{v.$blue-3};
+    --input-text-color: #{v.$gray-7};
+    --input-active-text-color: #{v.$gray-4};
+    --task-done-color: #{v.$blue-5};
+    --todo-text-color: #{v.$gray-4};
+    --text-color: #{v.$blue-6};
+    --hover-footer-text-color: #{v.$gray-3};
+    --background-photo: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
+  }
+

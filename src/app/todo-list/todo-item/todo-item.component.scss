@@ -1,0 +1,27 @@
+@use '../../../assets/styles/mixins' as m;
+@use '../../../assets/styles/variables' as v;
+.item {
+  height: 52px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  gap: 12px;
+  border-bottom: 1px solid v.$gray-2;
+
+  @include m.d {
+    height: 64px;
+    padding-left: 24px;
+    gap: 24px;
+
+  }
+
+  &__text {
+    font-size: 12px;
+    color: var(--todo-text-color);
+
+    @include m.d {
+      font-size: 18px;
+    }
+  }
+}
