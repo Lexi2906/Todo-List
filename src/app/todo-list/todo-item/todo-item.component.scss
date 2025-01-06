@@ -1,12 +1,12 @@
 @use '../../../assets/styles/mixins' as m;
 @use '../../../assets/styles/variables' as v;
+
 .item {
   height: 52px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
-  gap: 12px;
+  padding: 0 20px;
   border-bottom: 1px solid v.$gray-2;
 
   @include m.d {
@@ -16,6 +16,13 @@
 
   }
 
+  &__data {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
   &__text {
     font-size: 12px;
     color: var(--todo-text-color);
@@ -23,5 +30,39 @@
     @include m.d {
       font-size: 18px;
     }
+
+    &.completed {
+      color: var(--task-done-color);
+      text-decoration: line-through;
+    }
+  }
+
+  &__delete {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+    color: var(--icon-color);
+
+    @include m.d {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @include m.d {
+    &:hover .item__delete {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .item__delete img {
+    width: 12px;
+    height: 12px;
   }
 }

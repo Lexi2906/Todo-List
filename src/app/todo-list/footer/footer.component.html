@@ -1,18 +1,20 @@
 <div class="container">
 <div class="footer">
-  <p class="footer__items">5 items left</p>
+  <p class="footer__items">{{ pendingTasks }} items left</p>
   <div class="footer__status desktop">
-    <p>All</p>
-    <p>Active</p>
-    <p>Completed</p>
+    <p (click)="setFilter('all')" [class.active]="filter === 'all'">All</p>
+    <p (click)="setFilter('active')" [class.active]="filter === 'active'">Active</p>
+    <p (click)="setFilter('completed')" [class.active]="filter === 'completed'">Completed</p>
   </div>
-  <p class="footer__clean">Clean completed</p>
+  <p class="footer__clean" (click)="cleanCompleted()">Clear completed</p>
 </div>
   <div class="mobile">
-    <div class="footer footer__status">
-      <p>All</p>
-      <p>Active</p>
-      <p>Completed</p>
+    <div class="footer">
+    <div class="footer__status">
+      <p (click)="setFilter('all')" [class.active]="filter === 'all'">All</p>
+      <p (click)="setFilter('active')" [class.active]="filter === 'active'">Active</p>
+      <p (click)="setFilter('completed')" [class.active]="filter === 'completed'">Completed</p>
+    </div>
     </div>
   </div>
 </div>

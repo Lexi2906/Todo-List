@@ -10,6 +10,7 @@
     --background-items-color: #{v.$white};
     --text-color: #{v.$gray-6};
     --hover-footer-text-color: #{v.$gray-8};
+    --icon-color: #{v.$gray-8};
     --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
   }
 
@@ -22,6 +23,7 @@
     --todo-text-color: #{v.$gray-4};
     --text-color: #{v.$blue-6};
     --hover-footer-text-color: #{v.$gray-3};
+    --icon-color: #{v.$blue-6};
     --background-photo: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
   }
 
