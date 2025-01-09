@@ -64,6 +64,11 @@ export class TodoService {
     this.todosSubject.next(this.todos);
   }
 
+  getActiveTasksCount(): number {
+    return this.todos.filter(todo => !todo.completed).length;
+  }
+
+
   private saveToLocalStorage(): void {
     localStorage.setItem(FilterStorageKey.Todos, JSON.stringify(this.todos));
   }
