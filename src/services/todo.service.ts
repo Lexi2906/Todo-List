@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {Todo} from '../models/todo';
-import {BehaviorSubject, map, Observable} from 'rxjs';
+import {BehaviorSubject, combineLatest, map, Observable} from 'rxjs';
+import {FilterStorageKey} from '../models/filter-storage-key.enum';
+import {FilterTypes} from '../models/filter-types.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  private todos: Todo[] = JSON.parse(localStorage.getItem('todos') || '[]');
+  private todos: Todo[] = JSON.parse(localStorage.getItem(FilterStorageKey.Todos) || '[]');
   private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
-  private filterSubject = new BehaviorSubject<string>('all');
+  private filterSubject = new BehaviorSubject<FilterTypes>(FilterTypes.All);
 
   filter$ = this.filterSubject.asObservable();
 
@@ -16,19 +18,21 @@ export class TodoService {
     return this.todosSubject.asObservable();
   }
 
-  setFilter(filter: string): void {
+  setFilter(filter: FilterTypes): void {
     this.filterSubject.next(filter);
+    localStorage.setItem(FilterStorageKey.Filter, filter);
   }
 
   getFilteredTodos(): Observable<Todo[]> {
-    return this.filter$.pipe(
-      map((filter) => {
-        if (filter === 'active') {
-          return this.todos.filter((todo) => !todo.completed);
-        } else if (filter === 'completed') {
-          return this.todos.filter((todo) => todo.completed);
-        } else {
-          return this.todos; // All
+    return combineLatest([this.todosSubject.asObservable(), this.filter$]).pipe(
+      map(([todos, filter]) => {
+        switch (filter) {
+          case FilterTypes.Active:
+            return todos.filter(todo => !todo.completed);
+          case FilterTypes.Completed:
+            return todos.filter(todo => todo.completed);
+          default:
+            return todos;
         }
       })
     );
@@ -51,7 +55,6 @@ export class TodoService {
   deleteTodo(todo: Todo): void {
     this.todos = this.todos.filter(t => t.id !== todo.id);
     this.saveToLocalStorage();
-    console.log('todo', this.todos)
     this.todosSubject.next(this.todos);
   }
 
@@ -62,6 +65,6 @@ export class TodoService {
   }
 
   private saveToLocalStorage(): void {
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    localStorage.setItem(FilterStorageKey.Todos, JSON.stringify(this.todos));
   }
 }

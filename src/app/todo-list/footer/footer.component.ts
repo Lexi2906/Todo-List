@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnDestroy, OnInit, Output} from '@angular/core';
 import {TodoService} from '../../../services/todo.service';
 import {Subscription} from 'rxjs';
 import {Todo} from '../../../models/todo';
+import {FilterTypes} from '../../../models/filter-types.enum';
 
 @Component({
   selector: 'app-footer',
@@ -12,8 +13,15 @@ import {Todo} from '../../../models/todo';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   pendingTasks = 0;
-  filter: string = 'all';
+  filter: FilterTypes = FilterTypes.All;
+  isMobileView: boolean = window.innerWidth <= 768;
   private todosSubscription: Subscription | null = null;
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobileView = window.innerWidth <= 1440;
+  }
 
   @Output() filterChanged = new EventEmitter<Todo[]>();
 
@@ -21,7 +29,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.todosSubscription = this.todoService.getTodos().subscribe((todos) => {
+    this.todosSubscription = this.todoService.getFilteredTodos().subscribe((todos) => {
       this.pendingTasks = todos.filter((todo) => !todo.completed).length;
     });
   }
@@ -36,8 +44,11 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.todoService.deleteCompletedTodos();
   }
 
-  setFilter(filter: string): void {
-    this.filter = filter;
-    this.todoService.setFilter(filter);
+  setFilter(filterType: FilterTypes): void {
+    this.filter = filterType;
+    this.todoService.setFilter(filterType);
   }
+
+  protected readonly FilterTypes = FilterTypes;
+  protected readonly Component = Component;
 }
