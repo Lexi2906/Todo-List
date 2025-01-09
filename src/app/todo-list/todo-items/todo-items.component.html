@@ -1,6 +1,11 @@
 <div class="items">
   <div class="items__el">
-    <app-todo-item></app-todo-item>
+    <app-todo-item
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      (toggle)="toggleTaskCompletion(todo)"
+      (delete)="deleteTask(todo)">
+    </app-todo-item>
   </div>
   <app-footer></app-footer>
 </div>
