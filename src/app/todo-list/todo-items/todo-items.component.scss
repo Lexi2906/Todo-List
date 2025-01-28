@@ -26,6 +26,7 @@
 
     &:first-child {
       border-radius: 5px 5px 0 0;
+
     }
 
     &:not(:first-child) {
@@ -60,3 +61,50 @@
   color: var(--text-color);
   letter-spacing: 0.3px;
 }
+//
+//.cdk-drag-preview {
+//  border: none;
+//  border-radius: 8px; // Lepszy zaokrąglony efekt
+//  box-sizing: border-box;
+//  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+//  0 4px 6px -2px rgba(0, 0, 0, 0.1);
+//  transform: scale(1.05); // Subtelne powiększenie
+//  background-color: var(--background);
+//  transition: box-shadow 0.2s ease, transform 0.2s ease; // Płynna animacja
+//}
+//
+//// Styl placeholdera (miejsce docelowe podczas przeciągania)
+//.cdk-drag-placeholder {
+//  opacity: 0.5; // Ustaw półprzezroczystość
+//  background-color: var(--background);
+//  border: 2px dashed var(--text-color); // Wyróżnij miejsce docelowe
+//  transition: opacity 0.2s ease, transform 0.2s ease; // Animacja pojawiania się
+//}
+//
+//// Animacja elementu przeciąganego (po zakończeniu drag)
+//.cdk-drag-animating {
+//  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+//  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); // Płynna animacja
+//}
+//
+//// Elementy listy podczas przeciągania
+//.items.cdk-drop-list-dragging .items__el:not(.cdk-drag-placeholder) {
+//  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); // Animacja przesuwania
+//  filter: brightness(0.9); // Subtelne przyciemnienie innych elementów
+//}
+//
+//// Podświetlenie aktywnej listy
+//.cdk-drop-list-dragging {
+//  background-color: rgba(0, 0, 0, 0.02); // Lekkie podświetlenie listy
+//  transition: background-color 0.2s ease-in-out;
+//}
+//
+//// Dodanie efektu hover dla elementów przeciągania
+//.items__el {
+//  &:hover {
+//    transform: scale(1.02); // Subtelne powiększenie
+//    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.2),
+//    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+//    transition: transform 0.2s ease, box-shadow 0.2s ease;
+//  }
+//}

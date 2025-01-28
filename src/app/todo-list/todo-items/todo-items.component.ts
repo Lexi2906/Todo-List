@@ -5,10 +5,11 @@ import {Todo} from '../../../models/todo';
 import {TodoService} from '../../../services/todo.service';
 import {NgForOf} from '@angular/common';
 import {Subscription} from 'rxjs';
+import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-items',
-  imports: [TodoItemComponent, FooterComponent, NgForOf],
+  imports: [TodoItemComponent, FooterComponent, NgForOf, CdkDropList, CdkDrag],
   templateUrl: './todo-items.component.html',
   standalone: true,
   styleUrl: './todo-items.component.scss'
@@ -38,5 +39,14 @@ export class TodoItemsComponent implements OnInit, OnDestroy {
 
   deleteTask(todo: Todo): void {
     this.todoService.deleteTodo(todo);
+  }
+
+
+  drop(event: CdkDragDrop<Todo[]>) {
+    moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
+  }
+
+  trackByFn(index: number, item: Todo): number {
+    return item.id;
   }
 }

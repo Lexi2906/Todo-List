@@ -5,23 +5,23 @@ import {NgOptimizedImage} from '@angular/common';
 @Component({
   selector: 'app-todo-item',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
   ],
   templateUrl: './todo-item.component.html',
   standalone: true,
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-@Input() todo!: Todo;
-@Output() toggle = new EventEmitter<void>();
-@Output() delete = new EventEmitter<void>();
+  @Input() todo!: Todo;
+  @Output() toggle = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
 
   onToggle(): void {
-  this.toggle.emit();
-}
+    this.toggle.emit();
+  }
 
-onDelete(): void {
-  this.delete.emit();
+  onDelete(): void {
+    this.delete.emit();
 
-}
+  }
 }
