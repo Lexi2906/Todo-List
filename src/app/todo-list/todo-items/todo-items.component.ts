@@ -9,7 +9,7 @@ import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/d
 
 @Component({
   selector: 'app-todo-items',
-  imports: [TodoItemComponent, FooterComponent, NgForOf, CdkDropList, CdkDrag],
+  imports: [TodoItemComponent, FooterComponent, CdkDropList, CdkDrag],
   templateUrl: './todo-items.component.html',
   standalone: true,
   styleUrl: './todo-items.component.scss'

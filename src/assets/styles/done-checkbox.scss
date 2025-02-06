@@ -8,8 +8,8 @@
   height: 20px;
   border-radius: 50%;
   box-sizing: border-box;
-  border: 1px solid v.$gray-3;
-  background-color: v.$white;
+  border: 1px solid var(--checkbox-color);
+  background-color: var(--background);
   position: relative;
   cursor: pointer;
 
@@ -39,7 +39,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: v.$white;
+    background-color: var(--background);
     border-radius: 50%;
     z-index: 1;
   }

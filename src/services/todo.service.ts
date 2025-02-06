@@ -39,8 +39,10 @@ export class TodoService {
   }
 
   addTodo(taskText: string): void {
-    const newTodo: Todo = {id: Date.now(), text: taskText, completed: false};
-    this.todos.push(newTodo);
+    const newTodo: Todo = { id: Date.now(), text: taskText, completed: false };
+
+    this.todos.unshift(newTodo);
+
     this.saveToLocalStorage();
     this.todosSubject.next(this.todos);
   }

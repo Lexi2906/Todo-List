@@ -2,15 +2,14 @@
   @for(todo of todos; track todo) {
   <div class="items__el">
     <app-todo-item
-      cdkDrag
       [todo]="todo"
       (toggle)="toggleTaskCompletion(todo)"
       (delete)="deleteTask(todo)"
     ></app-todo-item>
   </div>
   }
-  <app-footer></app-footer>
 </div>
+<app-footer></app-footer>
 <div class="drag-and-drop">
   <p class="drag-and-drop__text">Drag and drop to reader list</p>
 </div>
