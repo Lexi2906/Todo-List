@@ -13,6 +13,7 @@
     --icon-color: #{v.$gray-8};
     --checkbox-color: #{v.$gray-3};
     --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
+    --check-icon: url('/assets/images/icon-check-light.svg');
   }
 
   .dark-mode {
@@ -27,5 +28,6 @@
     --icon-color: #{v.$blue-6};
     --checkbox-color: #{v.$blue-5};
     --background-photo: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
+    --check-icon: url('/assets/images/icon-check-dark.svg');
   }
 

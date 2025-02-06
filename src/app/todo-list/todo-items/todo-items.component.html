@@ -1,12 +1,12 @@
 <div class="items" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="todos">
-  @for(todo of todos; track todo) {
-  <div class="items__el">
-    <app-todo-item
-      [todo]="todo"
-      (toggle)="toggleTaskCompletion(todo)"
-      (delete)="deleteTask(todo)"
-    ></app-todo-item>
-  </div>
+  @for (todo of todos; track todo) {
+    <div class="items__el">
+      <app-todo-item
+        [todo]="todo"
+        (toggle)="toggleTaskCompletion(todo)"
+        (delete)="deleteTask(todo)"
+      ></app-todo-item>
+    </div>
   }
 </div>
 <app-footer></app-footer>

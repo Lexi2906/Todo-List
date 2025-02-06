@@ -1,7 +1,6 @@
 @use './mixins' as m;
 @use './variables' as v;
 
-//Create the checkbox container
 .done-checkbox {
   all: unset;
   width: 20px;
@@ -18,7 +17,6 @@
     width: 24px;
   }
 
- // Create the border pseudo-element
   &::before {
     content: '';
     position: absolute;
@@ -31,7 +29,6 @@
     transition: all 0.3s ease;
   }
 
-  // Create the inner content pseudo-element
   &::after {
     content: '';
     position: absolute;
@@ -44,19 +41,16 @@
     z-index: 1;
   }
 
-  // Change the border color on hover
   &:hover::before {
     border: none;
     background: v.$gradient;
   }
 
-  // Style for checked state
   &:checked {
     &::before {
       background: v.$gradient;
     }
 
-    // Display check icon in checked state
     &::after {
       display: flex;
       align-items: center;

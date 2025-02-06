@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TodoService} from '../../../services/todo.service';
 
@@ -13,10 +13,12 @@ import {TodoService} from '../../../services/todo.service';
 })
 export class TodoInputComponent {
   taskText: string = '';
-  constructor(private todoService: TodoService) {}
 
-  onEnter(event: KeyboardEvent): void {
-    if (event.key === 'Enter' && this.taskText.trim()) {
+  constructor(private todoService: TodoService) {
+  }
+
+  addItem(): void {
+    if (this.taskText.trim()) {
       this.todoService.addTodo(this.taskText.trim());
       this.taskText = '';
     }

@@ -1,7 +1,6 @@
 @use '../../../assets/styles/variables' as v;
 @use '../../../assets/styles/mixins' as m;
 
-
 .todo-input {
   display: flex;
   align-items: center;
@@ -12,8 +11,9 @@
   position: relative;
   color: var(--input-active-text-color);
   border: 1px solid var(--background);
+  background-color: var(--background);
 
-  @include m.d{
+  @include m.d {
     width: 540px;
     height: 64px;
   }
@@ -26,7 +26,6 @@
       left: 24px
     }
 
-    // Prevent any interaction
     &:disabled {
       pointer-events: none;
     }
@@ -44,7 +43,6 @@
     padding-left: 52px;
     cursor: auto;
 
-
     @include m.d {
       font-size: 18px;
       padding-left: 72px;
@@ -57,6 +55,22 @@
 
     @include m.d {
       font-size: 18px;
+    }
+  }
+
+  .check {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 16px;
+    background: var(--check-icon) no-repeat center;
+    background-size: contain;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    @include m.d {
+      visibility: hidden;
+      pointer-events: none;
     }
   }
 }
