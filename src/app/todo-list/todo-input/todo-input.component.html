@@ -8,8 +8,14 @@
     type="text"
     class="todo-input__text"
     placeholder="Create a new to do..."
-  [(ngModel)]="taskText"
-  (keydown)="onEnter($event)"
+    [(ngModel)]="taskText"
+    (keydown.enter)="addItem()"
   >
+  <div
+    class="check"
+    (click)="addItem()"
+  >
+  </div>
+
 </div>
 

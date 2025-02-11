@@ -6,7 +6,6 @@
   flex-direction: column;
   gap: 16px;
 
-
   .footer {
     height: 52px;
     display: flex;
@@ -71,7 +70,6 @@
     .footer__status p.active {
       color: v.$blue-1;
     }
-
 
     .desktop {
       display: none;

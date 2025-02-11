@@ -32,17 +32,4 @@ export class TodoListComponent implements OnInit, OnDestroy{
       this.todosSubscription.unsubscribe();
     }
   }
-
-  // Obsługuje dodanie nowego zadania
-  addNewTask(taskText: string): void {
-    this.todoService.addTodo(taskText);
-  }
-
-  toggleTaskCompletion(todo: Todo): void {
-    this.todoService.toggleTodoCompletion(todo);
-  }
-
-  deleteTask(todo: Todo): void {
-    this.todoService.deleteTodo(todo);
-  }
 }

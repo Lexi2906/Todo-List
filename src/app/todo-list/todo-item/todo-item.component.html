@@ -1,14 +1,15 @@
-<div class="item">
+<div class="item" cdkDrag>
   <div class="item__data">
-  <input
-    type="checkbox"
-    class="done-checkbox"
-    [checked]="todo.completed"
-    (change)="onToggle()"
-  />
-  <p class="item__text" [class.completed]="todo.completed">{{ todo.text }}</p>
-</div>
+    <input
+      type="checkbox"
+      class="done-checkbox"
+      [checked]="todo.completed"
+      (change)="onToggle()"
+    />
+    <p class="item__text" [class.completed]="todo.completed">{{ todo.text }}</p>
+  </div>
   <div class="item__delete" (click)="onDelete()">
-  <img ngSrc="assets/images/icon-cross.svg" alt="Delete" height="12" width="12"/>
+    <img ngSrc="assets/images/icon-cross.svg" alt="Delete" height="12" width="12"/>
   </div>
 </div>
+

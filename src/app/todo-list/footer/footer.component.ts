@@ -19,18 +19,13 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
   @Output() filterChanged = new EventEmitter<Todo[]>();
 
-
   pendingTasks = 0;
   filter: FilterTypes = FilterTypes.All;
   filteredTodos: Todo[] = [];
   isMobileView: boolean = window.innerWidth <= 768;
   private subscriptions = new Subscription();
 
-
-
-
-  constructor(private todoService: TodoService) {
-  }
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
     const filterSub = this.todoService.filter$.subscribe((filter) => {

@@ -1,14 +1,15 @@
-<div class="items">
-  <div class="items__el">
-    <app-todo-item
-      *ngFor="let todo of todos"
-      [todo]="todo"
-      (toggle)="toggleTaskCompletion(todo)"
-      (delete)="deleteTask(todo)">
-    </app-todo-item>
-  </div>
-  <app-footer></app-footer>
+<div class="items" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="todos">
+  @for (todo of todos; track todo) {
+    <div class="items__el">
+      <app-todo-item
+        [todo]="todo"
+        (toggle)="toggleTaskCompletion(todo)"
+        (delete)="deleteTask(todo)"
+      ></app-todo-item>
+    </div>
+  }
 </div>
+<app-footer></app-footer>
 <div class="drag-and-drop">
   <p class="drag-and-drop__text">Drag and drop to reader list</p>
 </div>

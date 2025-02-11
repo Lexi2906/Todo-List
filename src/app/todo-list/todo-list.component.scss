@@ -1,68 +1,70 @@
 @use '../../assets/styles/variables' as v;
 @use '../../assets/styles/mixins' as m;
 
-  app-todo-items {
+app-todo-items {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 172px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @include m.d {
+    top: 246px;
+  }
+}
+
+.todo-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__background {
+    height: 200px;
     width: 100%;
-    position: absolute;
-    left: 0;
-    top: 172px;
+    background: var(--background-photo);
+    background-size: cover;
+    padding-top: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 40px;
 
     @include m.d {
-      top: 246px;
+      height: 300px;
+      padding-top: 70px;
     }
-  }
 
-  .todo-list {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__background {
-      height: 200px;
-      width: 100%;
-      background: var(--background-photo);
-      background-size: cover;
-      padding-top: 48px;
+    .header {
+      width: 325px;
+      height: 20px;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 40px;
+      justify-content: space-between;
 
-      @include m.d {
-        height: 300px;
-        padding-top: 70px;
-      }
-
-
-      .header {
-        width: 325px;
-        height: 20px;
-        display: flex;
-        justify-content: space-between;
-
-        .header__text {
-          color: v.$white;
-          font-size: 20px;
-          font-weight: bold;
-          text-transform: uppercase;
-          letter-spacing: 15px;
-
-          @include m.d {
-            font-size: 40px;
-          }
-        }
+      .header__text {
+        color: v.$white;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 15px;
 
         @include m.d {
-          width: 541px;
-          height: 48px;
+          font-size: 40px;
         }
+      }
 
+      @include m.d {
+        width: 541px;
+        height: 48px;
       }
     }
   }
+}
 
 
