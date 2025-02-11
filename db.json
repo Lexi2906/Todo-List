@@ -1,1 +1,17 @@
-{}
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Learn Angular",
+      "status": "active",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "text": "Complete todo list app",
+      "status": "completed",
+      "order": 2
+    }
+  ]
+}
+
