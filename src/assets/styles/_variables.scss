@@ -1,26 +1,30 @@
 
 //blues
-$blue-1: #3A7CFD;
-$blue-2: #393A4B;
-$blue-3: #25273D;
-$blue-4: #171823;
-$blue-5: #4D5067;
-$blue-6: #5B5E7E;
+$blue-100: #3A7CFD;
+$blue-200: #393A4B;
+$blue-300: #25273D;
+$blue-400: #171823;
+$blue-500: #4D5067;
+$blue-600: #5B5E7E;
 
 //grays
 $white: #FFFFFF;
-$gray-1: #F2F2F2;
-$gray-2: rgba(151, 151, 151, 0.2);
-$gray-3: #E3E4F1;
-$gray-4: #C8CBE7;
-$gray-5: #D1D2DA;
-$gray-6: #9495A5;
-$gray-7: #767992;
-$gray-8: #494C6B;
+$gray-100: #F2F2F2;
+$gray-transparent: rgba(151, 151, 151, 0.2);
+$gray-200: #E3E4F1;
+$gray-300: #C8CBE7;
+$gray-400: #D1D2DA;
+$gray-500: #9495A5;
+$gray-600: #767992;
+$gray-700: #494C6B;
 $black: #111111;
 $gray-shadow: rgba(0, 0, 0, 0.25);
 
 //others
-$font: "Josefin Sans";
-$gradient: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+$font: "Josefin Sans", sans-serif;
+$gradient: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$drag-shadow:
+0 5px 5px -3px rgba(0, 0, 0, 0.2),
+0 8px 10px 1px rgba(0, 0, 0, 0.14),
+0 3px 14px 2px rgba(0, 0, 0, 0.12);
 

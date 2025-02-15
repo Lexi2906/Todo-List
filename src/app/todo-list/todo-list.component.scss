@@ -1,18 +1,19 @@
 @use '../../assets/styles/variables' as v;
 @use '../../assets/styles/mixins' as m;
+@use '../../assets/styles/functions' as f;
 
 app-todo-items {
   width: 100%;
   position: absolute;
   left: 0;
-  top: 172px;
+  top: f.calculateRem(176);
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 
   @include m.d {
-    top: 246px;
+    top: f.calculateRem(248);
   }
 }
 
@@ -28,17 +29,17 @@ app-todo-items {
     width: 100%;
     background: var(--background-photo);
     background-size: cover;
-    padding-top: 48px;
+    padding-top: f.calculateRem(48);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    gap: 40px;
+    gap: f.calculateRem(40);
 
     @include m.d {
       height: 300px;
-      padding-top: 70px;
+      padding-top: f.calculateRem(72);
     }
 
     .header {
@@ -49,13 +50,13 @@ app-todo-items {
 
       .header__text {
         color: v.$white;
-        font-size: 20px;
+        font-size: f.calculateRem(20);
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 15px;
 
         @include m.d {
-          font-size: 40px;
+          font-size: f.calculateRem(40);
         }
       }
 

@@ -1,7 +1,7 @@
 @use '../../../assets/styles/mixins' as m;
 
-.icon-image {
-  height: 20px;
+.icon__image {
+  max-height: 20px;
 
   @include m.d {
     height: 26px;

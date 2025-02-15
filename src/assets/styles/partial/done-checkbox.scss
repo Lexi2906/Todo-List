@@ -1,5 +1,7 @@
-@use './mixins' as m;
-@use './variables' as v;
+@use '../mixins' as m;
+@use '../variables' as v;
+@use '../functions' as f;
+
 
 .done-checkbox {
   all: unset;
@@ -56,7 +58,7 @@
       align-items: center;
       justify-content: center;
       content: url('/assets/images/icon-check.svg');
-      font-size: 14px;
+      font-size: f.calculateRem(14);
       color: v.$white;
       background: v.$gradient;
     }
