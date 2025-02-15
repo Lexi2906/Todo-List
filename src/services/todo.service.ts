@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Todo} from '../models/todo';
 import {BehaviorSubject, combineLatest, map, Observable} from 'rxjs';
-import {FilterStorageKey} from '../models/filter-storage-key.enum';
-import {FilterTypes} from '../models/filter-types.enum';
+import {FilterStorageKey} from '../enums/filter-storage-key.enum';
+import {FilterTypes} from '../enums/filter-types.enum';
 
 @Injectable({
   providedIn: 'root'

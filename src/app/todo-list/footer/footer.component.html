@@ -2,18 +2,18 @@
   <div class="footer">
     <p class="footer__items">{{ pendingTasks }} items left</p>
     <div class="footer__status desktop">
-      <p (click)="setFilter(FilterTypes.All)" [class.active]="filter === FilterTypes.All">All</p>
-      <p (click)="setFilter(FilterTypes.Active)" [class.active]="filter === FilterTypes.Active">Active</p>
-      <p (click)="setFilter(FilterTypes.Completed)" [class.active]="filter === FilterTypes.Completed">Completed</p>
+      <p class="status-el" (click)="setFilter(FilterTypes.All)" [class.active]="filter === FilterTypes.All">All</p>
+      <p class="status-el" (click)="setFilter(FilterTypes.Active)" [class.active]="filter === FilterTypes.Active">Active</p>
+      <p class="status-el" (click)="setFilter(FilterTypes.Completed)" [class.active]="filter === FilterTypes.Completed">Completed</p>
     </div>
     <p class="footer__clean" (click)="cleanCompleted()">Clear completed</p>
   </div>
   <div class="mobile">
     <div class="footer">
       <div class="footer__status">
-        <p (click)="setFilter(FilterTypes.All)" [class.active]="filter === FilterTypes.All">All</p>
-        <p (click)="setFilter(FilterTypes.Active)" [class.active]="filter === FilterTypes.Active">Active</p>
-        <p (click)="setFilter(FilterTypes.Completed)" [class.active]="filter === FilterTypes.Completed">Completed</p>
+        <p class="status-el" (click)="setFilter(FilterTypes.All)" [class.active]="filter === FilterTypes.All">All</p>
+        <p class="status-el" (click)="setFilter(FilterTypes.Active)" [class.active]="filter === FilterTypes.Active">Active</p>
+        <p class="status-el" (click)="setFilter(FilterTypes.Completed)" [class.active]="filter === FilterTypes.Completed">Completed</p>
       </div>
     </div>
   </div>
