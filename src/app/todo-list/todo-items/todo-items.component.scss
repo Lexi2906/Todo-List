@@ -23,6 +23,7 @@
   @include m.d {
     width: 540px;
     min-height: 64px;
+    max-height: 55vh;
   }
 
   &:last-child {
