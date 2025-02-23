@@ -3,10 +3,13 @@ import {TodoService} from '../../../services/todo.service';
 import {Subscription} from 'rxjs';
 import {Todo} from '../../../models/todo';
 import {FilterTypes} from '../../../enums/filter-types.enum';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './footer.component.html',
   standalone: true,
   styleUrl: './footer.component.scss'

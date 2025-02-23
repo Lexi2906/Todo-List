@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {TodoListComponent} from './todo-list/todo-list.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,8 @@ import {TodoListComponent} from './todo-list/todo-list.component';
 })
 export class AppComponent {
   title = 'todo-list';
+
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+  }
 }

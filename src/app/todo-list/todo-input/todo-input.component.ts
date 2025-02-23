@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TodoService} from '../../../services/todo.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-todo-input',
   imports: [
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './todo-input.component.html',
   standalone: true,

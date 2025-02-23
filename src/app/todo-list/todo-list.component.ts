@@ -5,12 +5,13 @@ import {TodoItemsComponent} from './todo-items/todo-items.component';
 import {TodoService} from '../../services/todo.service';
 import {Todo} from '../../models/todo';
 import {Subscription} from 'rxjs';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   standalone: true,
-  imports: [ThemeSwitcherComponent, TodoInputComponent, TodoItemsComponent],
+  imports: [ThemeSwitcherComponent, TodoInputComponent, TodoItemsComponent, TranslatePipe],
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent implements OnInit, OnDestroy{
