@@ -9,7 +9,7 @@
     <p class="item__text" [class.completed]="todo.completed">{{ todo.text }}</p>
   </div>
   <div class="item__delete" (click)="onDelete()">
-    <img ngSrc="assets/images/icon-cross.svg" alt="Delete" height="12" width="12"/>
+    <img class="delete-image" ngSrc="assets/images/icon-cross.svg" alt="Delete" height="12" width="12"/>
   </div>
 </div>
 
