@@ -1,7 +1,9 @@
 @use 'assets/styles/variables' as v;
 @use 'assets/styles/mixins' as m;
-@use 'assets/styles/switch-mode';
-@use './assets/styles/done-checkbox';
+@use 'assets/styles/partial/switch-mode';
+@use 'assets/styles/partial/done-checkbox';
+@use 'assets/styles/reset';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 * {
   margin: 0;

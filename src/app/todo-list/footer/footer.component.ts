@@ -2,7 +2,7 @@ import {Component, EventEmitter, HostListener, OnDestroy, OnInit, Output} from '
 import {TodoService} from '../../../services/todo.service';
 import {Subscription} from 'rxjs';
 import {Todo} from '../../../models/todo';
-import {FilterTypes} from '../../../models/filter-types.enum';
+import {FilterTypes} from '../../../enums/filter-types.enum';
 
 @Component({
   selector: 'app-footer',
@@ -57,5 +57,4 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   protected readonly FilterTypes = FilterTypes;
-  protected readonly Component = Component;
 }

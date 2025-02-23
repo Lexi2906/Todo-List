@@ -1,5 +1,6 @@
 @use '../../../assets/styles/variables' as v;
 @use '../../../assets/styles/mixins' as m;
+@use '../../../assets/styles/functions' as f;
 
 .todo-input {
   display: flex;
@@ -20,10 +21,10 @@
 
   .done-checkbox {
     position: absolute;
-    left: 20px;
+    left: f.calculateRem(20);
 
     @include m.d {
-      left: 24px
+      left: f.calculateRem(24);
     }
 
     &:disabled {
@@ -35,26 +36,26 @@
     flex-grow: 1;
     height: 100%;
     border: 1px solid var(--background);
-    caret-color: v.$blue-1;
+    caret-color: v.$blue-100;
     outline: none;
-    font-size: 12px;
+    font-size: f.calculateRem(12);
     color: var(--input-active-text-color);
     background-color: var(--background);
-    padding-left: 52px;
+    padding-left: f.calculateRem(56);
     cursor: auto;
 
     @include m.d {
-      font-size: 18px;
-      padding-left: 72px;
+      font-size: f.calculateRem(18);
+      padding-left: f.calculateRem(72);
     }
   }
 
   .todo-input__text::placeholder {
     color: var(--input-text-color);
-    font-size: 12px;
+    font-size: f.calculateRem(12);
 
     @include m.d {
-      font-size: 18px;
+      font-size: f.calculateRem(18);
     }
   }
 
@@ -62,7 +63,7 @@
     width: 18px;
     height: 18px;
     position: absolute;
-    right: 16px;
+    right: f.calculateRem(16);
     background: var(--check-icon) no-repeat center;
     background-size: contain;
     transition: opacity 0.3s ease;

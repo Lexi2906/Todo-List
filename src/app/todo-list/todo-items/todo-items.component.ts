@@ -4,11 +4,11 @@ import {FooterComponent} from '../footer/footer.component';
 import {Todo} from '../../../models/todo';
 import {TodoService} from '../../../services/todo.service';
 import {Subscription} from 'rxjs';
-import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-items',
-  imports: [TodoItemComponent, FooterComponent, CdkDropList, CdkDrag],
+  imports: [TodoItemComponent, FooterComponent, CdkDropList],
   templateUrl: './todo-items.component.html',
   standalone: true,
   styleUrl: './todo-items.component.scss'

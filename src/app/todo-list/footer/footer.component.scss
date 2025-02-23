@@ -1,5 +1,6 @@
 @use '../../../assets/styles/mixins' as m;
 @use '../../../assets/styles/variables' as v;
+@use '../../../assets/styles/functions' as f;
 
 .container {
   display: flex;
@@ -17,20 +18,20 @@
     background-color: var(--background);
     color: var(--text-color);
     border-radius: 0 0 5px 5px;
-    font-size: 14px;
+    font-size: f.calculateRem(14);
 
     @include m.d {
       height: 64px;
       width: 540px;
-      padding: 16px 24px;
+      padding: f.calculateRem(16) f.calculateRem(24);
     }
 
     &__items,
     &__clean {
-      font-size: 12px;
+      font-size: f.calculateRem(12);
 
       @include m.d {
-        font-size: 14px;
+        font-size: f.calculateRem(14);
       }
     }
 
@@ -50,16 +51,16 @@
       align-items: center;
       border-radius: 5px;
       font-weight: bold;
-      padding: 15px 80px 18px 81px;
-      gap: 18px;
+      padding: f.calculateRem(16) f.calculateRem(80);
+      gap: f.calculateRem(18);
 
       @include m.d {
-        padding: 0 56px 0 96px;
+        padding: 0 f.calculateRem(56) 0  f.calculateRem(96);
         gap: 0;
       }
     }
 
-    .footer__status p {
+    .status-el {
       cursor: pointer;
 
       &:hover {
@@ -67,8 +68,8 @@
       }
     }
 
-    .footer__status p.active {
-      color: v.$blue-1;
+    .status-el.active {
+      color: v.$blue-100;
     }
 
     .desktop {
