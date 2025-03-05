@@ -1,6 +1,6 @@
 export interface Todo {
   id: number;
   text: string;
-  completed: boolean;
-  order:number;
+  status: 'active' | 'completed';
+  order: number;
 }

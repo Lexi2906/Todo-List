@@ -4,20 +4,28 @@ import {BehaviorSubject, combineLatest, map, Observable} from 'rxjs';
 import {FilterStorageKey} from '../enums/filter-storage-key.enum';
 import {FilterTypes} from '../enums/filter-types.enum';
 
-import {HttpClient} from '@angular/common/http';
+import {TodoApiService} from './todo-api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  private apiUrl = 'http://localhost:3000/todos';
-  private todos: Todo[] = JSON.parse(localStorage.getItem(FilterStorageKey.Todos) || '[]');
-  private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
+  private todos: Todo[] = [];
+  private todosSubject = new BehaviorSubject<Todo[]>([]);
   private filterSubject = new BehaviorSubject<FilterTypes>(FilterTypes.All);
 
   filter$ = this.filterSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private todoApiService: TodoApiService) {
+    this.loadTodos();
+  }
+
+  private loadTodos(): void {
+    this.todoApiService.getTodos().subscribe(todos => {
+      this.todos = todos;
+      this.todosSubject.next(this.todos);
+    });
+  }
 
   getTodos(): Observable<Todo[]> {
     return this.todosSubject.asObservable();
@@ -33,9 +41,9 @@ export class TodoService {
       map(([todos, filter]) => {
         switch (filter) {
           case FilterTypes.Active:
-            return todos.filter(todo => !todo.completed);
+            return todos.filter(todo => todo.status === 'active');
           case FilterTypes.Completed:
-            return todos.filter(todo => todo.completed);
+            return todos.filter(todo => todo.status === 'completed');
           default:
             return todos;
         }
@@ -44,52 +52,48 @@ export class TodoService {
   }
 
   addTodo(taskText: string): void {
-    const newTodo: Todo = { id: Date.now(), text: taskText, completed: false, order: this.todos.length + 1 };
-    this.todos.unshift(newTodo);
-    this.saveToLocalStorage();
-    this.todosSubject.next(this.todos);
-    this.http.post<Todo>(this.apiUrl, newTodo).subscribe();
+    const newTodo: Todo = { id: Date.now(), text: taskText, status: 'active', order: this.todos.length + 1 };
+    this.todoApiService.addTodo(newTodo).subscribe(todo => {
+      this.todos.unshift(todo);
+      this.todosSubject.next(this.todos);
+    });
   }
 
   toggleTodoCompletion(todo: Todo): void {
-    const task = this.todos.find((t) => t.id === todo.id);
-    if (task) {
-      task.completed = !task.completed;
-      this.saveToLocalStorage();
+    const updatedTodo: Todo = {
+      ...todo,
+      status: todo.status === 'active' ? 'completed' : 'active'
+    };
+    this.todoApiService.updateTodo(updatedTodo).subscribe(() => {
+      this.todos = this.todos.map(t => (t.id === todo.id ? updatedTodo : t));
       this.todosSubject.next(this.todos);
-      this.http.put<Todo>(`${this.apiUrl}/${todo.id}`, task).subscribe();
-    }
+    });
   }
 
   deleteTodo(todo: Todo): void {
-    this.todos = this.todos.filter(t => t.id !== todo.id);
-    this.saveToLocalStorage();
-    this.todosSubject.next(this.todos);
-    this.http.delete(`${this.apiUrl}/${todo.id}`).subscribe();
+    this.todoApiService.deleteTodo(todo.id).subscribe(() => {
+      this.todos = this.todos.filter(t => t.id !== todo.id);
+      this.todosSubject.next(this.todos);
+    });
   }
 
   deleteCompletedTodos(): void {
-    this.todos = this.todos.filter(todo => !todo.completed);
-    this.saveToLocalStorage();
-    this.todosSubject.next(this.todos);
-    this.http.delete(`${this.apiUrl}/completed`).subscribe();
+    this.todoApiService.deleteCompletedTodos().subscribe(() => {
+      this.todos = this.todos.filter(todo => todo.status !== 'completed');
+      this.todosSubject.next(this.todos);
+    });
   }
 
   getActiveTasksCount(): number {
-    return this.todos.filter(todo => !todo.completed).length;
+    return this.todos.filter(todo => todo.status === 'active').length;
   }
 
   updateTodoOrder(updatedTodos: Todo[]): void {
     this.todos = updatedTodos;
-    this.saveToLocalStorage();
     this.todosSubject.next(this.todos);
 
     updatedTodos.forEach(todo => {
-      this.http.put<Todo>(`${this.apiUrl}/${todo.id}`, todo).subscribe();
+      this.todoApiService.updateTodo(todo).subscribe();
     });
-  }
-
-  private saveToLocalStorage(): void {
-    localStorage.setItem(FilterStorageKey.Todos, JSON.stringify(this.todos));
   }
 }
