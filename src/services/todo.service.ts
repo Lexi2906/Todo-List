@@ -22,7 +22,7 @@ export class TodoService {
 
   private loadTodos(): void {
     this.todoApiService.getTodos().subscribe(todos => {
-      this.todos = todos;
+      this.todos = todos.sort((a, b) => a.order - b.order);
       this.todosSubject.next(this.todos);
     });
   }
@@ -52,9 +52,14 @@ export class TodoService {
   }
 
   addTodo(taskText: string): void {
-    const newTodo: Todo = { id: Date.now(), text: taskText, status: 'active', order: this.todos.length + 1 };
-    this.todoApiService.addTodo(newTodo).subscribe(todo => {
-      this.todos.unshift(todo);
+    const newTodo: Omit<Todo, 'id'> = {
+      text: taskText,
+      status: 'active',
+      order: this.todos.length + 1
+    };
+
+    this.todoApiService.addTodo(newTodo).subscribe((savedTodo: Todo) => {
+      this.todos.push(savedTodo);
       this.todosSubject.next(this.todos);
     });
   }
@@ -91,9 +96,8 @@ export class TodoService {
   updateTodoOrder(updatedTodos: Todo[]): void {
     this.todos = updatedTodos;
     this.todosSubject.next(this.todos);
-
-    updatedTodos.forEach(todo => {
-      this.todoApiService.updateTodo(todo).subscribe();
-    });
+    this.todoApiService.updateTodoOrder(updatedTodos).subscribe()
   }
+
+
 }

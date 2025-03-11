@@ -43,8 +43,12 @@ export class TodoItemsComponent implements OnInit, OnDestroy {
 
   drop(event: CdkDragDrop<Todo[]>) {
     moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
+
     this.todos.forEach((todo, index) => {
       todo.order = index + 1;
     });
+
+    this.todoService.updateTodoOrder(this.todos);
   }
+
 }

@@ -3,10 +3,10 @@
     <input
       type="checkbox"
       class="done-checkbox"
-      [checked]="todo.completed"
+      [checked]="todo.status === 'completed'"
       (change)="onToggle()"
     />
-    <p class="item__text" [class.completed]="todo.completed">{{ todo.text }}</p>
+    <p class="item__text" [class.completed]="todo.status === 'completed'">{{ todo.text | translate }}</p>
   </div>
   <div class="item__delete" (click)="onDelete()">
     <img class="delete-image" ngSrc="assets/images/icon-cross.svg" alt="Delete" height="12" width="12"/>

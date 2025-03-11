@@ -2,21 +2,27 @@
   "todos": [
     {
       "id": 1,
-      "text": "Learn Angular",
+      "text": "zakupy",
+      "status": "active",
+      "order": 4
+    },
+    {
+      "text": "wyjsce z psem",
+      "status": "active",
+      "order": 2,
+      "id": 5
+    },
+    {
+      "text": "gotowanie",
+      "status": "active",
+      "order": 3,
+      "id": 6
+    },
+    {
+      "id": 7,
+      "text": "niewiemco",
       "status": "active",
       "order": 1
-    },
-    {
-      "id": 2,
-      "text": "Complete todo list app",
-      "status": "completed",
-      "order": 2
-    },
-    {
-      "id": 1741193782891,
-      "text": "add something",
-      "status": "active",
-      "order": 3
     }
   ]
 }
