@@ -7,16 +7,16 @@
       "order": 4
     },
     {
+      "id": 5,
       "text": "wyjsce z psem",
       "status": "active",
-      "order": 2,
-      "id": 5
+      "order": 2
     },
     {
+      "id": 6,
       "text": "gotowanie",
       "status": "active",
-      "order": 3,
-      "id": 6
+      "order": 3
     },
     {
       "id": 7,
