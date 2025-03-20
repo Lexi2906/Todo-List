@@ -20,20 +20,7 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/Todo-List/",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets",
-              "src/favicon.icon"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "baseHref": "/Todo-List/"
           },
           "configurations": {
             "production": {
