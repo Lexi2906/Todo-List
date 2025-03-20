@@ -98,6 +98,4 @@ export class TodoService {
     this.todosSubject.next(this.todos);
     this.todoApiService.updateTodoOrder(updatedTodos).subscribe()
   }
-
-
 }
