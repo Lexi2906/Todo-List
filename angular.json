@@ -20,7 +20,9 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/Todo-List/"
+            "tsConfig": "tsconfig.app.json",
+            "baseHref": "./",
+            "deployUrl": "./"
           },
           "configurations": {
             "production": {

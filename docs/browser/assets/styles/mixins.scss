@@ -1,6 +1,0 @@
-@mixin m {
-  @media (max-width: 1440px) { @content }
-}
-@mixin d {
-  @media (min-width: 1440px) { @content }
-}
