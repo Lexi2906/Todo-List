@@ -4,7 +4,7 @@
       "id": 1,
       "text": "zakupy",
       "status": "active",
-      "order": 4
+      "order": 3
     },
     {
       "id": 5,
@@ -16,7 +16,7 @@
       "id": 6,
       "text": "gotowanie",
       "status": "active",
-      "order": 3
+      "order": 4
     },
     {
       "id": 7,
