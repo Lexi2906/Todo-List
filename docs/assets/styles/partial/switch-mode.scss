@@ -12,8 +12,8 @@
     --hover-footer-text-color: #{v.$gray-700};
     --icon-color: #{v.$gray-700};
     --checkbox-color: #{v.$gray-200};
-    --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
-    --check-icon: url('/assets/images/icon-check-light.svg');
+    --background-photo: url('../../../assets/images/bg-desktop-light.jpg') no-repeat top center;
+    --check-icon: url('../../../assets/images/icon-check-light.svg');
   }
 
   .dark-mode {
@@ -27,7 +27,7 @@
     --hover-footer-text-color: #{v.$gray-200};
     --icon-color: #{v.$blue-600};
     --checkbox-color: #{v.$blue-500};
-    --background-photo: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
-    --check-icon: url('/assets/images/icon-check-dark.svg');
+    --background-photo: url('../../../assets/images/bg-desktop-dark.jpg') no-repeat top center;
+    --check-icon: url('../../../assets/images/icon-check-dark.svg');
   }
 
