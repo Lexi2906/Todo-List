@@ -18,6 +18,14 @@ The challenge was based on a pixel-perfect design from Figma and implemented usi
 
 ## 🚀 Project Setup
 
+
+
+**You can try this application here:** 
+### [Todo-App](https://lexi2906.github.io/Todo-List/ ) ###
+
+
+or
+
 To run the application locally, follow these steps:
 
 ### 1️⃣ Install dependencies
