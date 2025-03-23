@@ -10,7 +10,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'todo-list';
+  title = 'Todo-List';
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');

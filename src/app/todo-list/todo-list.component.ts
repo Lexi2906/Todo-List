@@ -8,11 +8,11 @@ import {Subscription} from 'rxjs';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'app-Todo-List',
   templateUrl: './todo-list.component.html',
   standalone: true,
   imports: [ThemeSwitcherComponent, TodoInputComponent, TodoItemsComponent, TranslatePipe],
-  styleUrl: './todo-list.component.scss'
+  styleUrl: './Todo-List.component.scss'
 })
 export class TodoListComponent implements OnInit, OnDestroy{
   todos: Todo[] = [];
