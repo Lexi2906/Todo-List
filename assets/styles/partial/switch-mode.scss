@@ -1,0 +1,33 @@
+@use '../variables' as v;
+
+  :root {
+    --body-background: #{v.$gray-100};
+    --background: #{v.$white};
+    --input-text-color: #{v.$gray-500};
+    --input-active-text-color: #{v.$blue-200};
+    --task-done-color: #{v.$gray-400};
+    --todo-text-color: #{v.$gray-700};
+    --background-items-color: #{v.$white};
+    --text-color: #{v.$gray-500};
+    --hover-footer-text-color: #{v.$gray-700};
+    --icon-color: #{v.$gray-700};
+    --checkbox-color: #{v.$gray-200};
+    --background-photo: url('/assets/images/bg-desktop-light.jpg') no-repeat top center;
+    --check-icon: url('/assets/images/icon-check-light.svg');
+  }
+
+  .dark-mode {
+    --body-background: #{v.$blue-400};
+    --background: #{v.$blue-300};
+    --input-text-color: #{v.$gray-600};
+    --input-active-text-color: #{v.$gray-300};
+    --task-done-color: #{v.$blue-500};
+    --todo-text-color: #{v.$gray-300};
+    --text-color: #{v.$blue-600};
+    --hover-footer-text-color: #{v.$gray-200};
+    --icon-color: #{v.$blue-600};
+    --checkbox-color: #{v.$blue-500};
+    --background-photo: url('/assets/images/bg-desktop-dark.jpg') no-repeat top center;
+    --check-icon: url('/assets/images/icon-check-dark.svg');
+  }
+
