@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todo-list": {
+    "Todo-List": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "todo-list:build:production"
+              "buildTarget": "Todo-List:build:production"
             },
             "development": {
-              "buildTarget": "todo-list:build:development"
+              "buildTarget": "Todo-List:build:development"
             }
           },
           "defaultConfiguration": "development"

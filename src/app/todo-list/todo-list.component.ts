@@ -9,7 +9,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-Todo-List',
-  templateUrl: './todo-list.component.html',
+  templateUrl: './Todo-List.component.html',
   standalone: true,
   imports: [ThemeSwitcherComponent, TodoInputComponent, TodoItemsComponent, TranslatePipe],
   styleUrl: './Todo-List.component.scss'

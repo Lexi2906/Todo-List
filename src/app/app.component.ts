@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TodoListComponent} from './todo-list/todo-list.component';
+import {TodoListComponent} from './Todo-List/Todo-List.component';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
