@@ -57,7 +57,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      content: url('/assets/images/icon-check.svg');
+      content: url('../../../assets/images/icon-check.svg');
       font-size: f.calculateRem(14);
       color: v.$white;
       background: v.$gradient;
