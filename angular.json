@@ -20,8 +20,8 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/Todo-List/",
-            "deployUrl": "/Todo-List/",
+            "baseHref": "./",
+            "deployUrl": "./",
             "polyfills": [
               "zone.js"
             ],
